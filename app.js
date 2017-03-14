@@ -4,7 +4,7 @@ var express=require('express'),
     io=require('socket.io').listen(server);
 
     users={};
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 8080;
     server.listen(port);
 
 app.use(express.static(__dirname + '/public'));
