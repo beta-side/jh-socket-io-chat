@@ -47,11 +47,11 @@ io.sockets.on('connection',function(socket){
             var name=msg.substring(0,ind);
             var msg=msg.substring(ind+1);
             console.log("name is: "+name+" your name is: "+ socket.nickname);
-             if(name in users &&  name !== socket.nickname){
+             if(name in users &&  name != socket.nickname){
                 users[name].emit('whisper',{msg:msg,nick:socket.nickname});
                 socket.emit('private',{msg:msg,nick:name});
               console.log("Whispering !");
-            }else if (name === socket.nickname)
+            }else if (name == socket.nickname)
             {
                 selfmsg = "Talking to yourself eh!\n"+msg;
                 users[name].emit('whisper',{msg:msg,nick:socket.nickname});
