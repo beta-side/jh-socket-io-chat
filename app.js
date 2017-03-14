@@ -53,7 +53,7 @@ io.sockets.on('connection',function(socket){
               console.log("Whispering !");
             }else if (name == socket.nickname)
             {
-                selfmsg = "Talking to yourself eh!\n"+msg;
+                msg = "Talking to yourself eh!\n"+msg;
                 users[name].emit('whisper',{msg:msg,nick:socket.nickname});
                 socket.emit('private',{msg:msg,nick:name});
               console.log("Whispering to myself :p!");
